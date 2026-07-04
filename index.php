@@ -117,3 +117,49 @@ endfor; ?>
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+<?php
+// Start date එක - game පටන් ගත්ත දවස
+$start_date = "2026-07-04"; 
+$today = date("Y-m-d");
+
+// දවස් කීයක් ගිහින්ද කියලා count කරනවා
+$days = floor((strtotime($today) - strtotime($start_date)) / (60 * 60 * 24));
+
+// Level එක = ගෙවුණු දවස් + 1
+$current_level = $days + 1;
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Puzzle ATHK - Level <?php echo $current_level; ?></title>
+    <style>
+        body { text-align: center; font-family: Arial; background: #1a1a1a; color: white; }
+        .level-box { font-size: 50px; margin-top: 100px; color: #00ff88; }
+    </style>
+</head>
+<body>
+    <div class="level-box">
+        LEVEL <?php echo $current_level; ?>
+    </div>
+    <p>අද: <?php echo $today; ?></p>
+    <p>Game එක පටන් අරන් දවස් <?php echo $days; ?>යි</p>
+    
+    <?php if($current_level == 1): ?>
+        <h2>Level 1: 3x3 Puzzle</h2>
+    <?php elseif($current_level == 2): ?>
+        <h2>Level 2: 4x4 Puzzle</h2>
+    <?php else: ?>
+        <h2>Level <?php echo $current_level; ?>: <?php echo $current_level+2; ?>x<?php echo $current_level+2; ?> Puzzle</h2>
+    <?php endif; ?>
+</body>
+</html>
