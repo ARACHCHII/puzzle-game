@@ -41,7 +41,7 @@ $won = ($board == [1,2,3,4,5,6,7,8,0]);
 <!DOCTYPE html>
 <html>
 <head>
-<title>2D Sliding Puzzle</title>
+<title>ATHK Puzzle</title>
 <style>
     body { 
         font-family: Arial; 
